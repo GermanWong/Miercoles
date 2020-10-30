@@ -133,6 +133,56 @@ def move():
                 vector(0, 5),
                 vector(0, -5),
             ]
+       
+            poff = offset(pacman) #0-posibles índices de las casillas de la lista
+            pcol = poff%20
+            pren = math.floor(poff/20)
+            
+         
+            goff = offset(point)
+            gcol = goff%20
+            gren = math.floor(goff/20)
+
+
+            if(pcol < gcol and pren < gren):
+                options = [
+                    vector(-5, 0),
+                    vector(0, 5),
+                ]
+                print("Estoy yendo hacia arriba/izq")
+            
+            if(pcol > gcol and pren < gren):
+                options = [
+                    vector(5, 0),
+                    vector(0, 5),
+                ]
+                print("Estoy yendo hacia arriba/der")
+            
+            if(pcol < gcol and pren > gren):
+               
+                options = [
+                    vector(-5, 0),
+                    vector(0, -5),
+                ]
+                print("Estoy yendo hacia abajo/izq")
+            
+            if(pcol > gcol and pren > gren):
+                options = [
+                    vector(5, 0),
+                    vector(0, -5),
+                ]
+                print("Estoy yendo hacia abajo/der")
+            
+
+            #escoger alguna opción
+            plan = choice(options)
+
+
+            course.x = plan.x
+            course.y = plan.y
+            
+            
+            
             plan = choice(options)
             course.x = plan.x
             course.y = plan.y
