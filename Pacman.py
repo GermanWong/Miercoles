@@ -10,7 +10,7 @@ Exercises
 from random import choice
 from turtle import *
 from freegames import floor, vector
-
+import math
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
@@ -146,14 +146,14 @@ def move():
                     vector(-5, 0),
                     vector(0, 5),
                 ]
-                print("Estoy yendo hacia arriba/izq")
+                
             
             if(pcol > gcol and pren < gren):
                 options = [
                     vector(5, 0),
                     vector(0, 5),
                 ]
-                print("Estoy yendo hacia arriba/der")
+                
             
             if(pcol < gcol and pren > gren):
                
@@ -161,14 +161,14 @@ def move():
                     vector(-5, 0),
                     vector(0, -5),
                 ]
-                print("Estoy yendo hacia abajo/izq")
+                
             
             if(pcol > gcol and pren > gren):
                 options = [
                     vector(5, 0),
                     vector(0, -5),
                 ]
-                print("Estoy yendo hacia abajo/der")
+              
             
 
             #escoger alguna opción
